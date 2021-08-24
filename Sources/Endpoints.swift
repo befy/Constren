@@ -12,11 +12,7 @@ public extension ViewWrapper {
     var rootView: UIView {
         return self_.superview ?? self_
     }
-    
-    var getConstraint: NSLayoutConstraint? {
-        self_.constraints.last
-    }
-    
+
     @discardableResult
     func top(_ top: NSLayoutYAxisAnchor? = nil,
              spacing: CGFloat = 0,
