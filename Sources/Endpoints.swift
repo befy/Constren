@@ -12,6 +12,21 @@ public extension ViewWrapper {
     var rootView: UIView {
         return self_.superview ?? self_
     }
+    
+    // MARK: - Default Properties
+    var y: Self {
+        let constraint = self_.centerYAnchor.constraint(relation: Relation_.equal.rawValue, anchor: rootView.centerYAnchor, constant: 0)
+        rootView.addConstraint(constraint)
+        return self
+    }
+    
+    var x: Self {
+        let constraint = self_.centerXAnchor.constraint(relation: Relation_.equal.rawValue, anchor: rootView.centerXAnchor, constant: 0)
+        rootView.addConstraint(constraint)
+        return self
+    }
+    
+    // MARK: - Methods
 
     @discardableResult
     func top(_ top: NSLayoutYAxisAnchor? = nil,
